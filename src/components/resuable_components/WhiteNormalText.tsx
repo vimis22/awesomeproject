@@ -3,10 +3,9 @@ import {View, StyleSheet, Text} from 'react-native';
 
 interface NormalTextProps {
     text: string;
-    textColor?: string;
 }
 
-const NormalText: React.FC<NormalTextProps> = ({text}) => {
+const WhiteNormalText: React.FC<NormalTextProps> = ({text}) => {
     return(
         <View>
             <Text style={styles.buttonText}>{text}</Text>
@@ -20,7 +19,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         padding: 10,
+        textAlign: 'center',
     },
 });
 
-export default NormalText;
+export default WhiteNormalText;

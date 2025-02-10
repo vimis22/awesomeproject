@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView, StyleSheet, TouchableOpacity, Text, View, TextInput, Button, ScrollView} from 'react-native';
 import Navbar from '../components/resuable_components/Navbar.tsx';
 import WhiteNormalText from '../components/resuable_components/BlackNormalText.tsx';
-const Task2 = ({navigation}: any ) => {
+const Task2_2 = ({navigation}: any ) => {
     return(
         <SafeAreaView style={styles.background}>
             <Navbar text={'Task2_1 & Task2_2'} />
@@ -27,21 +27,21 @@ const Task2 = ({navigation}: any ) => {
                     <View style={styles.taskTextContainer}>
                         <WhiteNormalText text={'This is a task to complete'} />
                     </View>
-                    <Button title={"Done"} onPress={() => { }} />
+                    <Button title={'Done'} onPress={() => { }} />
                 </View>
 
                 <View style={styles.tasks}>
                     <View style={styles.taskTextContainer}>
                         <WhiteNormalText text={'This is a task to complete'} />
                     </View>
-                    <Button title={"Done"} onPress={() => { }} />
+                    <Button title={'Done'} onPress={() => { }} />
                 </View>
 
                 <View style={styles.tasks}>
                     <View style={styles.taskTextContainer}>
                         <WhiteNormalText text={'This is a task to complete'} />
                     </View>
-                    <Button title={"Done"} onPress={() => { }} />
+                    <Button title={'Done'} onPress={() => { }} />
                 </View>
             </ScrollView>
 
@@ -49,7 +49,7 @@ const Task2 = ({navigation}: any ) => {
             <View style={styles.buttonWrapper}>
                 <TouchableOpacity
                     style={styles.buttonContainer}
-                    onPress={() => navigation.navigate('SplashScreen')}>
+                    onPress={() => navigation.navigate('Task2_3')}>
                     <Text style={styles.nextScreenText}>Click to next screen</Text>
                 </TouchableOpacity>
             </View>
@@ -136,4 +136,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Task2;
+export default Task2_2;
