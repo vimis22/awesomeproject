@@ -18,11 +18,18 @@ enableScreens();
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+    const scrOptions = {
+        headerStyle: { backgroundColor: '#330099' },
+        headerTitleStyle: { color: 'white'},
+        headerBackTitleVisible: false,
+        headerTintColor: 'white'
+    }
+
     return (
         <TaskProvider>
             <SafeAreaProvider>
                 <NavigationContainer>
-                    <Stack.Navigator initialRouteName="SplashScreen">
+                    <Stack.Navigator screenOptions={scrOptions} initialRouteName="SplashScreen">
                         <Stack.Screen name="SplashScreen" component={SplashScreen} />
                         <Stack.Screen name="Task1" component={Task1} />
                         <Stack.Screen name="Task2_2" component={Task2_2} />
