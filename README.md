@@ -5,6 +5,13 @@ is to show how the developer (vimis22) has solved tasks given by Pentia ApS.</p>
 
 <h2>Get Started!</h2>
 <p>To get started with the project, please use the following command to run on IOS.</p>
+<p>First, start the Metro Bundler in order to make the Emulator start.</p>
+
+```
+npx react-native start
+```
+
+<p>Now run this command in a seperate terminal. Then the Xcode Terminal will popup.</p>
 
 ```
 npm run ios
