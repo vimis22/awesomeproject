@@ -2,7 +2,7 @@ import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
 
 const TaskDetails = ({ route }: any) => {
-    const { task } = route.params;
+    const { task } = route.params || { task: 'No Task Provided' };
 
     return (
         <SafeAreaView style={styles.container}>

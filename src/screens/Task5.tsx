@@ -3,6 +3,7 @@ import { View, TextInput, StyleSheet, SafeAreaView, FlatList, TouchableOpacity, 
 import Navbar from '../components/resuable_components/Navbar.tsx';
 import TaskItem from '../components/resuable_components/TaskItem.tsx';
 import { useTasks } from '../contexts/tasks.context.tsx';
+import ActionButton from '../components/resuable_components/ActionButton.tsx';
 
 const Task5 = ({ navigation }: any) => {
     const { tasks, addTask, clearTasks } = useTasks();
@@ -47,18 +48,12 @@ const Task5 = ({ navigation }: any) => {
 
             {tasks.length > 0 && (
                 <View style={styles.buttonWrapper}>
-                    <TouchableOpacity style={styles.removeBtnContainer} onPress={clearTasks}>
-                        <Text style={styles.nextScreenText}>Clear all tasks</Text>
-                    </TouchableOpacity>
+                    <ActionButton onPress={clearTasks} title="Clear all tasks" backgroundColor="#ffec00" textColor="#000000" />
                 </View>
             )}
 
             <View style={styles.buttonWrapper}>
-                <TouchableOpacity
-                    style={styles.buttonContainer}
-                    onPress={() => navigation.navigate('SplashScreen')}>
-                    <Text style={styles.nextScreenText}>Click to next screen</Text>
-                </TouchableOpacity>
+                <ActionButton onPress={() => navigation.navigate('TaskDetails')} title="Go to Next Screen" backgroundColor="#ffec00" textColor="#000000" />
             </View>
         </SafeAreaView>
     );
