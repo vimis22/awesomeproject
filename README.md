@@ -39,7 +39,7 @@ npm install react-native-screens react-native-safe-area-context react-native-ges
 ```
 
 <h3>Notes from Developer</h3>
-<p>Task 5 is equivalent to the file Overview, as described in the task.</p>
+<p>Task5.tsx is equivalent to the file Overview, as described in the task.</p>
 <p>The add button inside the Task5 is not working. I have tried to debug the problem,
 with the use of different tools but it has not worked.</p>
 <p>Feel free to contact back for more enquiries.</p>
