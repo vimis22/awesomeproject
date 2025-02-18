@@ -22,8 +22,8 @@ export default function App() {
         headerStyle: { backgroundColor: '#330099' },
         headerTitleStyle: { color: 'white'},
         headerBackTitleVisible: false,
-        headerTintColor: 'white'
-    }
+        headerTintColor: 'white',
+    };
 
     return (
         <TaskProvider>
