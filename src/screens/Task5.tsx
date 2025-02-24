@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, SafeAreaView, FlatList, TouchableOpacity, Text } from 'react-native';
-import Navbar from '../components/resuable_components/Navbar.tsx';
-import TaskItem from '../components/resuable_components/TaskItem.tsx';
+import { View, TextInput, StyleSheet, SafeAreaView, FlatList} from 'react-native';
+import Navbar from '../components/Navbar.tsx';
+import TaskItem from '../components/TaskItem.tsx';
 import { useTasks } from '../contexts/tasks.context.tsx';
-import ActionButton from '../components/resuable_components/ActionButton.tsx';
+import ActionButton from '../components/ActionButton.tsx';
+import AddButton from '../components/AddButton.tsx';
+import NormalText from '../components/NormalText.tsx';
 
 const Task5 = ({ navigation }: any) => {
     const { tasks, addTask, clearTasks } = useTasks();
@@ -21,20 +23,21 @@ const Task5 = ({ navigation }: any) => {
                     placeholderTextColor={'#aaa'}
                     onChangeText={text => setNewTask(text)}
                 />
-                <TouchableOpacity style={styles.addButton} onPress={() => {
-                    if (newTask.trim()) {
-                        addTask(newTask);
-                        setNewTask('');
-                    }
-                }}>
-                    <Text style={styles.addBtnText}>Add</Text>
-                </TouchableOpacity>
+
+                <AddButton onPress={() => {
+                        if (newTask.trim()) {
+                            addTask(newTask);
+                            setNewTask('');
+                        }
+                    }}
+                    title="Add"
+                />
             </View>
 
             <View style={styles.divider} />
 
             {tasks.length === 0 ? (
-                <Text style={styles.nullExistedTask}>No Task Defined Yet!</Text>
+                <NormalText text={'No Task Defined Yet!'} textColor={'#ffffff'} />
             ) : (
                 <FlatList
                     style={styles.taskContainer}
@@ -53,7 +56,7 @@ const Task5 = ({ navigation }: any) => {
             )}
 
             <View style={styles.buttonWrapper}>
-                <ActionButton onPress={() => navigation.navigate('TaskDetails')} title="Go to Next Screen" backgroundColor="#ffec00" textColor="#000000" />
+                <ActionButton onPress={() => navigation.navigate('CreatedTaskScreen')} title="Go to Next Screen" backgroundColor="#ffec00" textColor="#000000" />
             </View>
         </SafeAreaView>
     );
