@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {View, TextInput, StyleSheet, SafeAreaView, FlatList, TouchableOpacity, Text} from 'react-native';
+import {View, TextInput, StyleSheet, SafeAreaView, FlatList} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Navbar from '../components/resuable_components/Navbar.tsx';
-import TaskItem from '../components/resuable_components/TaskItem.tsx';
+import Navbar from '../components/Navbar.tsx';
+import TaskItem from '../components/TaskItem.tsx';
+import ActionButton from '../components/ActionButton.tsx';
+import AddButton from '../components/AddButton.tsx';
+import NormalText from '../components/NormalText.tsx';
 
 const Task4 = ({navigation}: any) => {
     const [tasks, setTasks] = useState<string[]>([]);
@@ -40,19 +43,18 @@ const Task4 = ({navigation}: any) => {
                     placeholderTextColor={'#aaa'}
                     onChangeText = {text => setNewTask(text)}
                 />
-                <TouchableOpacity style={styles.addButton} onPress={() => {
+
+                <AddButton onPress={() =>{
                     setTasks([...tasks, newTask]);
                     setNewTask('');
-                }}>
-                    <Text style={styles.addBtnText}>Add</Text>
-                </TouchableOpacity>
+                }} title={'Add'} />
             </View>
 
             <View style={styles.divider}/>
 
             {
                 tasks.length === 0 ? (
-                    <Text style={styles.nullExistedTask}>No Task Defined Yet!</Text>
+                    <NormalText text={'No Task Defined Yet!'} textColor={'#ffffff'} />
                 ) : (
                     <FlatList
                         style={styles.taskContainer}
@@ -68,23 +70,17 @@ const Task4 = ({navigation}: any) => {
             {
                 tasks.length > 0 && (
                     <View style={styles.buttonWrapper}>
-                        <TouchableOpacity style={styles.removeBtnContainer} onPress={removeAllTasks}>
-                            <Text style={styles.nextScreenText}>Clear all tasks</Text>
-                        </TouchableOpacity>
+                        <ActionButton onPress={removeAllTasks} title={'Clear All Tasks'} backgroundColor={'#ff6a00'} />
                     </View>
                 )
             }
 
             <View style={styles.buttonWrapper}>
-                <TouchableOpacity
-                    style={styles.buttonContainer}
-                    onPress={() => navigation.navigate('Task5')}>
-                    <Text style={styles.nextScreenText}>Click to next screen</Text>
-                </TouchableOpacity>
+                <ActionButton onPress={() => navigation.navigate('Task5')} title={'Click to next screen'} backgroundColor={'#ffec00'} />
             </View>
         </SafeAreaView>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     background: {
@@ -105,7 +101,7 @@ const styles = StyleSheet.create({
     textInputContainer: {
         flexDirection: 'row',
         marginBottom: 10,
-        marginHorizontal: 16
+        marginHorizontal: 16,
     },
     textInputField: {
         flex: 1,

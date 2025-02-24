@@ -8,7 +8,7 @@ interface ActionButtonProps {
     textColor?: string;
 }
 
-const Button: React.FC<ActionButtonProps> = ({ onPress, title, backgroundColor = '#ffec00', textColor = '#000000' }) => {
+const ActionButton: React.FC<ActionButtonProps> = ({ onPress, title, backgroundColor = '#ffec00', textColor = '#000000' }) => {
     return (
         <TouchableOpacity style={[styles.button, { backgroundColor }]} onPress={onPress}>
             <Text style={[styles.buttonText, { color: textColor }]}>{title}</Text>
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Button;
+export default ActionButton;

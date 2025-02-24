@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 
-interface TextProps {
+interface NormalTextProps {
     text: string;
     fontSize?: number;
     textColor?: string;
@@ -9,8 +9,7 @@ interface TextProps {
     fontWeight?: number;
 }
 
-const Text: React.FC<TextProps> = ({
-text, fontSize = 32, textColor = '#000000', backgroundColor = 'transparent', fontWeight}) => {
+const NormalText: React.FC<NormalTextProps> = ({text, fontSize = 20, textColor = '#000000', backgroundColor = 'transparent', fontWeight}) => {
     return (
         <View style={[styles.container, { backgroundColor }]}>
             <Text style={[styles.text, {fontSize, color: textColor, fontWeight: fontWeight?.toString()}]}>
@@ -30,4 +29,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Text;
+export default NormalText;

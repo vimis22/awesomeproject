@@ -17,6 +17,7 @@ const TaskContext = createContext<TaskContextInterface>({
 
 export const TaskProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [tasks, setTasks] = useState<string[]>([]);
+    const [newTask, setNewTask] = useState<string>('');
 
     useEffect(() => {
         const loadTasks = async () => {

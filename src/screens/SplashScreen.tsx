@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
-import BlackNormalText from '../components/resuable_components/BlackNormalText.tsx';
+import { StyleSheet, View } from 'react-native';
+import ActionButton from '../components/ActionButton.tsx';
 
 class SplashScreen extends React.Component<{navigation: any}> {
   render() {
@@ -8,11 +8,7 @@ class SplashScreen extends React.Component<{navigation: any}> {
 
     return (
         <View style={styles.pageContainer}>
-          <TouchableOpacity
-              style={styles.buttonContainer}
-              onPress={() => navigation.navigate('Task1')}>
-            <BlackNormalText text={'Click to next screen'} />
-          </TouchableOpacity>
+          <ActionButton onPress={() => navigation.navigate('Task4')} title={'Click to next screen'} backgroundColor={'#ffec00'} />
         </View>
     );
   }
